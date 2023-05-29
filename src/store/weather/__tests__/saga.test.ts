@@ -22,7 +22,7 @@ describe('store/weather', () => {
         expect(dispatched).toStrictEqual([fetchWeatherSuccess(nullWeather)]);
       });
 
-      test('It should call fetchWeather API and dispatch failure action when successful', async () => {
+      test('It should call fetchWeather API and dispatch failure action when unsuccessful', async () => {
         jest
           .spyOn(WeatherService, 'fetchCurrentWeather')
           .mockRejectedValueOnce(new Error('mock-error'));
